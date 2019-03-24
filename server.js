@@ -2,7 +2,7 @@ var express=require("express");
 var path=require("path");
 
 var app = express();
-
+var friends=require("./app/data/friends.js");
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
 var PORT = process.env.PORT || 8080;
@@ -19,8 +19,15 @@ app.get("/",function(req,res){
 app.get("/survey",function(req,res){
     res.sendFile(path.join(__dirname,"/app/public/survey.html"));
 })
+app.post("/api/friends",function(req,res){
+    console.log(req.body);
+    friends.push(req.body);
+});
 
-
+app.get("/api/friends",function(req,res){
+    console.log(req.body);
+    res.json(friends);
+});
 
 
 

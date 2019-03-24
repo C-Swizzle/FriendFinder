@@ -10,15 +10,25 @@
   crossorigin="anonymous"></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+  </head>
+  <body>
     <div class="container"><div class="jumbotron"><h1 class="display-4">
             Take the Survey
     </h1>
     <hr class="my-4">
     <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control" id="name" placeholder="Name">
+          </div>
+          <div class="form-group">
+              <label for="url">Picture of Yourself</label>
+              <input class="form-control" id="url" placeholder="url">
+            </div> <hr class="my-4">
             <div class="form-group">
                     <label for="question1" class="lead">I love dogs.</label>
                     <select class="form-control" id="question1">
+                        <option></option>
                       <option>1 (Strongly Agree)</option>
                       <option>2 (Agree)</option>
                       <option>3 (Neutral)</option>
@@ -30,6 +40,7 @@
                   <div class="form-group">
                         <label for="question2" class="lead">I love cats.</label>
                         <select class="form-control" id="question2">
+                          <option></option>
                           <option>1 (Strongly Agree)</option>
                           <option>2 (Agree)</option>
                           <option>3 (Neutral)</option>
@@ -37,12 +48,48 @@
                           <option>5 (Strongly Disagree)</option>
                         </select>
                       </div>
+
+                      <button type="submit" class="btn btn-success" id="submit">Submit</button>
     </form>
 </div></div>
 
 
-</head>
-<body>
+
     
 </body>
+<script>
+$(document).ready(function(){
+$("#submit").on("click",function(e){
+  e.preventDefault();
+  if(name===""||picUrl===""){
+    alert("Please enter your name and picture url!");
+    return;
+
+  }
+  console.log($("#question2").val()[0])
+  var questionLength=2;
+  var questionScoresArr=[];
+  for (var i=1;i<=questionLength;i++){
+    var strCheck=$("#question"+i.toString()).val();
+    var name=$("#name").val().trim();
+    var picUrl=$("#url").val().trim();
+    if(strCheck===undefined||strCheck===""){
+      alert("Please answer every question!");
+      return;
+    }
+    questionScoresArr.push(Number(strCheck[0]));
+  }
+  console.log(questionScoresArr);
+  var objToSend = {
+    name: name,
+    picUrl: picUrl,
+    questions: questionScoresArr
+  };
+  console.log(objToSend);
+  $.ajax({url:"/api/friends",method:"POST",data:objToSend}).then(function(response){
+    console.log(response);
+  });
+});
+});
+</script>
 </html>
