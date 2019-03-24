@@ -48,6 +48,65 @@
                           <option>5 (Strongly Disagree)</option>
                         </select>
                       </div>
+                      <hr class="my-1">
+                      <div class="form-group">
+                          <label for="question3" class="lead">I consider myself a "people-person."</label>
+                          <select class="form-control" id="question3">
+                            <option></option>
+                            <option>1 (Strongly Agree)</option>
+                            <option>2 (Agree)</option>
+                            <option>3 (Neutral)</option>
+                            <option>4 (Disagree)</option>
+                            <option>5 (Strongly Disagree)</option>
+                          </select>
+                        </div>
+                        <hr class="my-1">
+                        <div class="form-group">
+                            <label for="question4" class="lead">I would love to just stay home and watch Netflix all day.</label>
+                            <select class="form-control" id="question4">
+                              <option></option>
+                              <option>1 (Strongly Agree)</option>
+                              <option>2 (Agree)</option>
+                              <option>3 (Neutral)</option>
+                              <option>4 (Disagree)</option>
+                              <option>5 (Strongly Disagree)</option>
+                            </select>
+                          </div>
+                          <hr class="my-1"><div class="form-group">
+                              <label for="question5" class="lead">I love the outdoors.</label>
+                              <select class="form-control" id="question5">
+                                <option></option>
+                                <option>1 (Strongly Agree)</option>
+                                <option>2 (Agree)</option>
+                                <option>3 (Neutral)</option>
+                                <option>4 (Disagree)</option>
+                                <option>5 (Strongly Disagree)</option>
+                              </select>
+                            </div>
+                            <hr class="my-1">
+                            <div class="form-group">
+                                <label for="question6" class="lead">I like to spend time on social media.</label>
+                                <select class="form-control" id="question6">
+                                  <option></option>
+                                  <option>1 (Strongly Agree)</option>
+                                  <option>2 (Agree)</option>
+                                  <option>3 (Neutral)</option>
+                                  <option>4 (Disagree)</option>
+                                  <option>5 (Strongly Disagree)</option>
+                                </select>
+                              </div>
+                              <hr class="my-1"><div class="form-group">
+                                  <label for="question7" class="lead">I like programming.</label>
+                                  <select class="form-control" id="question7">
+                                    <option></option>
+                                    <option>1 (Strongly Agree)</option>
+                                    <option>2 (Agree)</option>
+                                    <option>3 (Neutral)</option>
+                                    <option>4 (Disagree)</option>
+                                    <option>5 (Strongly Disagree)</option>
+                                  </select>
+                                </div>
+                                <hr class="my-1">
 
                       <button type="submit" class="btn btn-success" id="submit">Submit</button>
     </form>
@@ -67,7 +126,7 @@ $("#submit").on("click",function(e){
 
   }
   console.log($("#question2").val()[0])
-  var questionLength=2;
+  var questionLength=7;
   var questionScoresArr=[];
   for (var i=1;i<=questionLength;i++){
     var strCheck=$("#question"+i.toString()).val();
@@ -87,7 +146,7 @@ $("#submit").on("click",function(e){
   };
   console.log(objToSend);
   $.ajax({url:"/api/friends",method:"POST",data:objToSend}).then(function(response){
-    console.log(response);
+    console.log("ajax response",response);
   });
 });
 });
