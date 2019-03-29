@@ -10,6 +10,8 @@
   crossorigin="anonymous"></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
   </head>
   <body>
     <div class="container"><div class="jumbotron"><h1 class="display-4">
@@ -108,8 +110,36 @@
                                 </div>
                                 <hr class="my-1">
 
-                      <button type="submit" class="btn btn-success" id="submit">Submit</button>
+                      <button type="submit" data-toggle="modal" data-target="#myModal" class="btn btn-success" id="submit">Submit</button>
     </form>
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      Open modal
+    </button> -->
+    
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Modal Heading</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body">
+            
+          </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+    
+        </div>
+      </div>
+    </div>
 </div></div>
 
 
@@ -134,6 +164,7 @@ $("#submit").on("click",function(e){
     var picUrl=$("#url").val().trim();
     if(strCheck===undefined||strCheck===""){
       alert("Please answer every question!");
+      window.location.reload();
       return;
     }
     questionScoresArr.push(Number(strCheck[0]));
@@ -147,6 +178,23 @@ $("#submit").on("click",function(e){
   console.log(objToSend);
   $.ajax({url:"/api/friends",method:"POST",data:objToSend}).then(function(response){
     console.log("ajax response",response);
+    $(".modal-body").empty();
+    
+    var $p=$("<p>");
+    $p.append(`Your answers were most similar to the answers from ${response.name}.<br>`);
+    var $img=$("<img>");
+    $img.attr("src",response.picUrl);
+    $img.attr("alt",`Picture of ${response.name}`);
+    $img.css("max-height", "300px");
+    $img.css("max-width", "300px");
+
+    $p.append(`Picture of ${response.name}: <br>`);
+    $p.append($img);
+
+    $(".modal-body").append($p);
+
+    
+
   });
 });
 });
