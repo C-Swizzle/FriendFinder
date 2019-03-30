@@ -1,163 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="container"><div class="jumbotron"><h1 class="display-4">
-            Take the Survey
-    </h1>
-    <hr class="my-4">
-    <form>
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">
+        Take the Survey
+      </h1>
+      <hr class="my-4">
+      <form>
         <div class="form-group">
-            <label for="name">Name</label>
-            <input class="form-control" id="name" placeholder="Name">
-          </div>
-          <div class="form-group">
-              <label for="url">Picture of Yourself</label>
-              <input class="form-control" id="url" placeholder="url">
-            </div> <hr class="my-4">
-            <div class="form-group">
-                    <label for="question1" class="lead">I love dogs.</label>
-                    <select class="form-control" id="question1">
-                        <option></option>
-                      <option>1 (Strongly Agree)</option>
-                      <option>2 (Agree)</option>
-                      <option>3 (Neutral)</option>
-                      <option>4 (Disagree)</option>
-                      <option>5 (Strongly Disagree)</option>
-                    </select>
-                  </div>
-    <hr class="my-1">
-                  <div class="form-group">
-                        <label for="question2" class="lead">I love cats.</label>
-                        <select class="form-control" id="question2">
-                          <option></option>
-                          <option>1 (Strongly Agree)</option>
-                          <option>2 (Agree)</option>
-                          <option>3 (Neutral)</option>
-                          <option>4 (Disagree)</option>
-                          <option>5 (Strongly Disagree)</option>
-                        </select>
-                      </div>
-                      <hr class="my-1">
-                      <div class="form-group">
-                          <label for="question3" class="lead">I consider myself a "people-person."</label>
-                          <select class="form-control" id="question3">
-                            <option></option>
-                            <option>1 (Strongly Agree)</option>
-                            <option>2 (Agree)</option>
-                            <option>3 (Neutral)</option>
-                            <option>4 (Disagree)</option>
-                            <option>5 (Strongly Disagree)</option>
-                          </select>
-                        </div>
-                        <hr class="my-1">
-                        <div class="form-group">
-                            <label for="question4" class="lead">I would love to just stay home and watch Netflix all day.</label>
-                            <select class="form-control" id="question4">
-                              <option></option>
-                              <option>1 (Strongly Agree)</option>
-                              <option>2 (Agree)</option>
-                              <option>3 (Neutral)</option>
-                              <option>4 (Disagree)</option>
-                              <option>5 (Strongly Disagree)</option>
-                            </select>
-                          </div>
-                          <hr class="my-1"><div class="form-group">
-                              <label for="question5" class="lead">I love the outdoors.</label>
-                              <select class="form-control" id="question5">
-                                <option></option>
-                                <option>1 (Strongly Agree)</option>
-                                <option>2 (Agree)</option>
-                                <option>3 (Neutral)</option>
-                                <option>4 (Disagree)</option>
-                                <option>5 (Strongly Disagree)</option>
-                              </select>
-                            </div>
-                            <hr class="my-1">
-                            <div class="form-group">
-                                <label for="question6" class="lead">I like to spend time on social media.</label>
-                                <select class="form-control" id="question6">
-                                  <option></option>
-                                  <option>1 (Strongly Agree)</option>
-                                  <option>2 (Agree)</option>
-                                  <option>3 (Neutral)</option>
-                                  <option>4 (Disagree)</option>
-                                  <option>5 (Strongly Disagree)</option>
-                                </select>
-                              </div>
-                              <hr class="my-1"><div class="form-group">
-                                  <label for="question7" class="lead">I like programming.</label>
-                                  <select class="form-control" id="question7">
-                                    <option></option>
-                                    <option>1 (Strongly Agree)</option>
-                                    <option>2 (Agree)</option>
-                                    <option>3 (Neutral)</option>
-                                    <option>4 (Disagree)</option>
-                                    <option>5 (Strongly Disagree)</option>
-                                  </select>
-                                </div>
-                                <hr class="my-1">
+          <label for="name">Name</label>
+          <input class="form-control" id="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="url">Picture of Yourself</label>
+          <input class="form-control" id="url" placeholder="url">
+        </div>
+        <hr class="my-4">
+        <div class="form-group">
+          <label for="question1" class="lead">I love dogs.</label>
+          <select class="form-control" id="question1">
+            <option></option>
+            <option>1 (Strongly Agree)</option>
+            <option>2 (Agree)</option>
+            <option>3 (Neutral)</option>
+            <option>4 (Disagree)</option>
+            <option>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <hr class="my-1">
+        <div class="form-group">
+          <label for="question2" class="lead">I love cats.</label>
+          <select class="form-control" id="question2">
+            <option></option>
+            <option>1 (Strongly Agree)</option>
+            <option>2 (Agree)</option>
+            <option>3 (Neutral)</option>
+            <option>4 (Disagree)</option>
+            <option>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <hr class="my-1">
+        <div class="form-group">
+          <label for="question3" class="lead">I consider myself a "people-person."</label>
+          <select class="form-control" id="question3">
+            <option></option>
+            <option>1 (Strongly Agree)</option>
+            <option>2 (Agree)</option>
+            <option>3 (Neutral)</option>
+            <option>4 (Disagree)</option>
+            <option>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <hr class="my-1">
+        <div class="form-group">
+          <label for="question4" class="lead">I would love to just stay home and watch Netflix all day.</label>
+          <select class="form-control" id="question4">
+            <option></option>
+            <option>1 (Strongly Agree)</option>
+            <option>2 (Agree)</option>
+            <option>3 (Neutral)</option>
+            <option>4 (Disagree)</option>
+            <option>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <hr class="my-1">
+        <div class="form-group">
+          <label for="question5" class="lead">I love the outdoors.</label>
+          <select class="form-control" id="question5">
+            <option></option>
+            <option>1 (Strongly Agree)</option>
+            <option>2 (Agree)</option>
+            <option>3 (Neutral)</option>
+            <option>4 (Disagree)</option>
+            <option>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <hr class="my-1">
+        <div class="form-group">
+          <label for="question6" class="lead">I like to spend time on social media.</label>
+          <select class="form-control" id="question6">
+            <option></option>
+            <option>1 (Strongly Agree)</option>
+            <option>2 (Agree)</option>
+            <option>3 (Neutral)</option>
+            <option>4 (Disagree)</option>
+            <option>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <hr class="my-1">
+        <div class="form-group">
+          <label for="question7" class="lead">I like programming.</label>
+          <select class="form-control" id="question7">
+            <option></option>
+            <option>1 (Strongly Agree)</option>
+            <option>2 (Agree)</option>
+            <option>3 (Neutral)</option>
+            <option>4 (Disagree)</option>
+            <option>5 (Strongly Disagree)</option>
+          </select>
+        </div>
+        <hr class="my-1">
 
-                      <button type="submit" class="btn btn-success" id="submit">Submit</button>
-    </form>
-    <p id="testtest"></p>
-</div></div>
+        <button type="submit" class="btn btn-success" id="submit">Submit</button>
+      </form>
+      <p id="testtest"></p>
+    </div>
+  </div>
 
 
 
-    
+
 </body>
 <script>
-$(document).ready(function(){
-$("#submit").on("click",function(e){
-  e.preventDefault();
-  if(name===""||picUrl===""){
-    alert("Please enter your name and picture url!");
-    return;
+  $(document).ready(function () {
+    $("#submit").on("click", function (e) {
+      e.preventDefault();
+      if (name === "" || picUrl === "") {
+        alert("Please enter your name and picture url!");
+        return;
 
-  }
-  var questionLength=7;
-  var questionScoresArr=[];
-  for (var i=1;i<=questionLength;i++){
-    var strCheck=$("#question"+i.toString()).val();
-    var name=$("#name").val().trim();
-    var picUrl=$("#url").val().trim();
-    if(strCheck===undefined||strCheck===""){
-      alert("Please answer every question!");
-      return;
-    }
-    questionScoresArr.push(Number(strCheck[0]));
-  }
-  console.log(questionScoresArr);
-  var objToSend = {
-    name: name,
-    picUrl: picUrl,
-    questions: questionScoresArr
-  };
-  console.log(objToSend);
-  $.ajax({url:"/api/friends",method:"POST",data:objToSend}).then(function(response){
-    console.log("ajax response",response);
-    $("#testtest").empty();
-    $("#testtest").append("name: "+response.name);
-    var pic=$("<img>");
-    pic.attr("src",response.picUrl);
-    pic.attr("alt","an image of "+response.name);
-    $("#testtest").append(pic);
-    $("#testtest").append("questions: "+response.questions);
+      }
+      var questionLength = 7;
+      var questionScoresArr = [];
+      for (var i = 1; i <= questionLength; i++) {
+        var strCheck = $("#question" + i.toString()).val();
+        var name = $("#name").val().trim();
+        var picUrl = $("#url").val().trim();
+        if (strCheck === undefined || strCheck === "") {
+          alert("Please answer every question!");
+          return;
+        }
+        questionScoresArr.push(Number(strCheck[0]));
+      }
+      console.log(questionScoresArr);
+      var objToSend = {
+        name: name,
+        picUrl: picUrl,
+        questions: questionScoresArr
+      };
+      console.log(objToSend);
+      $.ajax({ url: "/api/friends", method: "POST", data: objToSend }).then(function (response) {
+        console.log("ajax response", response);
+        $("#testtest").empty();
+        $("#testtest").append("name: " + response.name);
+        var pic = $("<img>");
+        pic.attr("src", response.picUrl);
+        pic.attr("alt", "an image of " + response.name);
+        $("#testtest").append(pic);
+        $("#testtest").append("questions: " + response.questions);
 
 
+      });
+    });
   });
-});
-});
 </script>
+
 </html>
