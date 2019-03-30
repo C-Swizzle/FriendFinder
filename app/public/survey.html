@@ -110,6 +110,7 @@
 
                       <button type="submit" class="btn btn-success" id="submit">Submit</button>
     </form>
+    <p id="testtest"></p>
 </div></div>
 
 
@@ -125,7 +126,6 @@ $("#submit").on("click",function(e){
     return;
 
   }
-  console.log($("#question2").val()[0])
   var questionLength=7;
   var questionScoresArr=[];
   for (var i=1;i<=questionLength;i++){
@@ -147,6 +147,15 @@ $("#submit").on("click",function(e){
   console.log(objToSend);
   $.ajax({url:"/api/friends",method:"POST",data:objToSend}).then(function(response){
     console.log("ajax response",response);
+    $("#testtest").empty();
+    $("#testtest").append("name: "+response.name);
+    var pic=$("<img>");
+    pic.attr("src",response.picUrl);
+    pic.attr("alt","an image of "+response.name);
+    $("#testtest").append(pic);
+    $("#testtest").append("questions: "+response.questions);
+
+
   });
 });
 });
